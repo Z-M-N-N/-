@@ -1,21 +1,57 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec 25 11:55:13 2019
+
+@author: Administrator
+"""
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Dec  1 15:07:09 2019
+
+@author: Administrator
+"""
+
 import random
 import numpy as np
 import time
 import matplotlib.pyplot as plt
 
-def gradient_descent(x,y,theta):
-    time_begin = time.time()
-    X=np.mat(x)
-    Y=np.mat(y).T
-    Theta=np.mat(theta).T
-    Hy=X*Theta
-    a=0.001
-    loss=[]
-    item_count=30
-    for i in range(item_count):
-        Hy=X*Theta
-        J=(1.0/(2*len(y)))*np.sum(np.square(Hy-Y))
-        loss.append(J)
-        Theta=Theta-a*(1.0)/len(y)*np.sum(X.T*(Hy-Y))
-    plt.plot(range(item_count),loss)
+import numpy as np
+
+# Size of the points dataset.
+
+x=[[3,4],[5,7],[5,6]]
+y=[40,69,62]
+X=np.mat(x)
+Y=np.mat(y).T
+Theta=np.mat([2 for i in range(n)]).T
+m = len(y)
+n=len(x[0])
+loss=[]
+
+# The Learning Rate alpha.
+alpha = 0.01
+
+
+def gradient_descent(X, Y, alpha,theta,loss,m):
+    '''Perform gradient descent.'''
+    
+    x=1
+    while True:
+        diff = X*theta - Y
+        print theta
+        loss.append((1./2*m) *np.sum( diff.T*diff))
+        gradient = (1./m) *X.T*diff
+        if np.all(np.absolute(gradient) <=0.01):
+            break
+        theta = theta - alpha * gradient
+
+        x+=1
+    plt.plot(range(x),loss)
     plt.show()
+    print x
+    return theta
+
+theta,v = gradient_descent(X, Y, alpha,Theta,loss,m)
+print theta
+
