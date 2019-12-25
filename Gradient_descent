@@ -1,0 +1,83 @@
+from readfile import *
+import random
+import numpy as np
+import time
+import matplotlib.pyplot as plt
+
+def gradient_descent(x1,y1,theta1):
+    time_begin = time.time()
+    #input_x = [[1, 4], [2, 5], [5, 1], [4, 2]]
+    #y = [19, 26, 19, 20]
+    #theta = [1, 1]
+    input_x=x1
+    y=y1
+    theta=theta1
+    loss = 10
+    step_size = 0.00001
+    eps = 0.00001
+    max_iters = 80
+    error = 0
+    iter_counter = 0
+    x=0
+    result=[]
+    #global loss;global iter_counter;global input_x;global y;global theta;global eps;global error;global step_size;global max_iters
+    while(loss>eps and iter_counter<max_iters):
+        loss =0
+        x+=1
+        for i in range(len(y)):
+            predict_y= theta[0]*input_x[i][0]+theta[1]*input_x[i][1]+theta[2]*input_x[i][2]+theta[3]*input_x[i][3]+theta[4]*input_x[i][4]+theta[5]*input_x[i][5]+theta[6]*input_x[i][6]+theta[7]*input_x[i][7]+theta[8]*input_x[i][8]+theta[9]*input_x[i][9]+theta[10]*input_x[i][10]+theta[11]*input_x[i][11]+theta[12]*input_x[i][12]+theta[13]*input_x[i][13]+theta[14]*input_x[i][14]+theta[15]*input_x[i][15]+theta[16]*input_x[i][16]+theta[17]*input_x[i][17]+theta[18]*input_x[i][18]+theta[19]*input_x[i][19]+theta[20]*input_x[i][20]+theta[21]*input_x[i][21]+theta[22]*input_x[i][22]+theta[23]*input_x[i][23]+theta[24]*input_x[i][24]+theta[25]*input_x[i][25]+theta[26]*input_x[i][26]+theta[27]*input_x[i][27]+theta[28]*input_x[i][28]+theta[29]*input_x[i][29]+theta[30]*input_x[i][30]+theta[31]*input_x[i][31]+theta[32]*input_x[i][32]+theta[33]*input_x[i][33]+theta[34]*input_x[i][34]+theta[35]*input_x[i][35]+theta[36]*input_x[i][36]+theta[37]*input_x[i][37]
+            theta[0] = theta[0] - step_size * (predict_y - y[i]) * input_x[i][0]
+            theta[1] = theta[1] - step_size * (predict_y - y[i]) * input_x[i][1]
+            theta[2] = theta[2] - step_size * (predict_y - y[i]) * input_x[i][2]
+            theta[3] = theta[3] - step_size * (predict_y - y[i]) * input_x[i][3]
+            theta[4] = theta[4] - step_size * (predict_y - y[i]) * input_x[i][4]
+            theta[5] = theta[5] - step_size * (predict_y - y[i]) * input_x[i][5]
+            theta[6] = theta[6] - step_size * (predict_y - y[i]) * input_x[i][6]
+            theta[7] = theta[7] - step_size * (predict_y - y[i]) * input_x[i][7]
+            theta[8] = theta[8] - step_size * (predict_y - y[i]) * input_x[i][8]
+            theta[9] = theta[9] - step_size * (predict_y - y[i]) * input_x[i][9]
+            theta[10] = theta[10] - step_size * (predict_y - y[i]) * input_x[i][10]
+            theta[11] = theta[11] - step_size * (predict_y - y[i]) * input_x[i][11]
+            theta[12] = theta[12] - step_size * (predict_y - y[i]) * input_x[i][12]
+            theta[13] = theta[13] - step_size * (predict_y - y[i]) * input_x[i][13]
+            theta[14] = theta[14] - step_size * (predict_y - y[i]) * input_x[i][14]
+            theta[15] = theta[15] - step_size * (predict_y - y[i]) * input_x[i][15]
+            theta[16] = theta[16] - step_size * (predict_y - y[i]) * input_x[i][16]
+            theta[17] = theta[17] - step_size * (predict_y - y[i]) * input_x[i][17]
+            theta[18] = theta[18] - step_size * (predict_y - y[i]) * input_x[i][18]
+            theta[19] = theta[19] - step_size * (predict_y - y[i]) * input_x[i][19]
+            theta[20] = theta[20] - step_size * (predict_y - y[i]) * input_x[i][20]
+            theta[21] = theta[21] - step_size * (predict_y - y[i]) * input_x[i][21]
+            theta[22] = theta[22] - step_size * (predict_y - y[i]) * input_x[i][22]
+            theta[23] = theta[23] - step_size * (predict_y - y[i]) * input_x[i][23]
+            theta[24] = theta[24] - step_size * (predict_y - y[i]) * input_x[i][24]
+            theta[25] = theta[25] - step_size * (predict_y - y[i]) * input_x[i][25]
+            theta[26] = theta[26] - step_size * (predict_y - y[i]) * input_x[i][26]
+            theta[27] = theta[27] - step_size * (predict_y - y[i]) * input_x[i][27]
+            theta[28] = theta[28] - step_size * (predict_y - y[i]) * input_x[i][28]
+            theta[29] = theta[29] - step_size * (predict_y - y[i]) * input_x[i][29]
+            theta[30] = theta[30] - step_size * (predict_y - y[i]) * input_x[i][30]
+            theta[31] = theta[31] - step_size * (predict_y - y[i]) * input_x[i][31]
+            theta[32] = theta[32] - step_size * (predict_y - y[i]) * input_x[i][32]
+            theta[33] = theta[33] - step_size * (predict_y - y[i]) * input_x[i][33]
+            theta[34] = theta[34] - step_size * (predict_y - y[i]) * input_x[i][34]
+            theta[35] = theta[35] - step_size * (predict_y - y[i]) * input_x[i][35]
+            theta[36] = theta[36] - step_size * (predict_y - y[i]) * input_x[i][36]
+            theta[37] = theta[37] - step_size * (predict_y - y[i]) * input_x[i][37]
+        for i in range(len(y)):
+            predict_y = theta[0]*input_x[i][0]+theta[1]*input_x[i][1]+theta[2]*input_x[i][2]+theta[3]*input_x[i][3]+theta[4]*input_x[i][4]+theta[5]*input_x[i][5]+theta[6]*input_x[i][6]+theta[7]*input_x[i][7]+theta[8]*input_x[i][8]+theta[9]*input_x[i][9]+theta[10]*input_x[i][10]+theta[11]*input_x[i][11]+theta[12]*input_x[i][12]+theta[13]*input_x[i][13]+theta[14]*input_x[i][14]+theta[15]*input_x[i][15]+theta[16]*input_x[i][16]+theta[17]*input_x[i][17]+theta[18]*input_x[i][18]+theta[19]*input_x[i][19]+theta[20]*input_x[i][20]+theta[21]*input_x[i][21]+theta[22]*input_x[i][22]+theta[23]*input_x[i][23]+theta[24]*input_x[i][24]+theta[25]*input_x[i][25]+theta[26]*input_x[i][26]+theta[27]*input_x[i][27]+theta[28]*input_x[i][28]+theta[29]*input_x[i][29]+theta[30]*input_x[i][30]+theta[31]*input_x[i][31]+theta[32]*input_x[i][32]+theta[33]*input_x[i][33]+theta[34]*input_x[i][34]+theta[35]*input_x[i][35]+theta[36]*input_x[i][36]+theta[37]*input_x[i][37]
+
+            error = 0.5*np.square(predict_y-y[i])
+
+            loss =loss +error
+        iter_counter +=1
+        #print('iter_counter',iter_counter)
+        #print('loss',loss)
+        result.append(loss)
+
+    print('final iter_counter',iter_counter)
+    print('final loss',loss)
+    print('final theta',theta)
+    print('total time',time.time()-time_begin)
+    plt.plot(np.array(range(iter_counter)), np.array(result))
+    plt.show()
