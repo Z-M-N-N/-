@@ -1,0 +1,5 @@
+def Euclidean(i,j):
+  V1 = np.array(i)
+  V2 = np.array(j)
+  sumx=np.sqrt(np.sum(np.square(V1-V2)))
+  return sumx
