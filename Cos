@@ -1,4 +1,4 @@
-def (i,j):
+def Cos(i,j):
   V1 = np.array(i)
   V2 = np.array(j)
   up = np.sum(V1 * V2)
