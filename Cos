@@ -1,0 +1,13 @@
+def (i,j):
+  V1 = np.array(i)
+  V2 = np.array(j)
+  up = np.sum(V1 * V2)
+  sumx=0.0
+  if up != 0:
+      down1 = np.sqrt(np.sum(V1 * V1))
+      down2 = np.sqrt(np.sum(V2 * V2))
+      sumx = up / (down1 * down2)
+
+  else:
+      sumx = 0.0
+  return sumx
